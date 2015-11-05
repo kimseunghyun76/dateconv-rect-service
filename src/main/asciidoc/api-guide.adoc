@@ -1,0 +1,32 @@
+= PROJECT NAME RESTful Notes API Guide
+kim seunghyun;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+우리회사에서 사용되는 모든 API를 제공합니다. 아래 가이드 대로 잘 해보세요.
+
+
+[[User]]
+= User
+
+A `GET` request will retrieve the details of a tag
+
+==== Request structure
+
+include::{snippets}/user/http-request.adoc[]
+
+==== Example request
+
+include::{snippets}/user/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/user/http-response.adoc[]
+
+

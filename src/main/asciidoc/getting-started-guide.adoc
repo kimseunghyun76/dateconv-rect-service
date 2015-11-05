@@ -1,0 +1,53 @@
+= PROJECT RESTful Notes Getting Started Guide
+kim seunghyun;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[introduction]
+= Introduction
+
+RESTful Notes is a RESTful web service for creating and storing notes. It uses hypermedia
+to describe the relationships between resources and to allow navigation between them.
+
+[getting-started]
+= Getting started
+
+
+
+[getting-started-running-the-service]
+== Running the service
+RESTful Notes is written using http://projects.spring.io/spring-boot[Spring Boot] which
+makes it easy to get it up and running so that you can start exploring the REST API.
+
+The first step is to clone the Git repository:
+
+[source,bash]
+----
+$ git clone https://github.com/spring-projects/spring-restdocs
+----
+
+Once the clone is complete, you're ready to get the service up and running:
+
+[source,bash]
+----
+$ cd samples/rest-notes-spring-data-rest
+$ ./mvnw clean package
+$ java -jar target/*.jar
+----
+
+You can check that the service is up and running by executing a simple request using
+cURL:
+
+include::{snippets}/index/1/curl-request.adoc[]
+
+This request should yield the following response in the
+http://stateless.co/hal_specification.html[Hypertext Application Language (HAL)] format:
+
+include::{snippets}/index/1/http-response.adoc[]
+
+Note the `_links` in the JSON response. They are key to navigating the API.
+
